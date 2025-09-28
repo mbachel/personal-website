@@ -5,9 +5,11 @@ export default function HomePage() {
     return (
         <RootLayout>
             <Hero />
-            <div className="font-nunito text-center min-h-screen">
-                Home Page works!
-            </div>
+            <section className="font-nunito text-center min-h-screen">
+                <h1 classname="">
+                    
+                </h1>
+            </section>
         </RootLayout>
     );
 }

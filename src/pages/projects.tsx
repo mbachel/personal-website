@@ -5,7 +5,9 @@ export default function projects() {
     return (
         <RootLayout>
             <MiniHero />
-            <div>Projects Page works!</div>
+            <div className="font-nunito text-center min-h-screen">
+                Projects Page works!
+            </div>
         </RootLayout>
     );
 } 

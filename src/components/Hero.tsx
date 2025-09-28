@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Hero() {
     return (
-        <header className="flex font-inter items-center justify-center h-fit text-center pt-16">
+        <header className="flex font-inter items-center h-fit text-center pt-16 m-auto w-160">
             <div>
                 <div className="pb-4">
                     <Image 
@@ -20,7 +20,7 @@ export default function Hero() {
                     />
                 </div>
                 <h1 className="text-5xl mt-4 pb-2">
-                    Matthew Bachelder
+                    Hi! I&apos;m Matthew Bachelder
                 </h1>
                 <h3 className="text-lg pb-2">
                     Charlotte, NC
@@ -30,7 +30,7 @@ export default function Hero() {
                     <br />
                     BA Computer Science, IT Concentration
                 </h2>
-                <div className="pb-6">
+                <div className="pb-6 justify-center">
                     <Link 
                         href="/contact" 
                         title="Contact Me">
@@ -60,7 +60,7 @@ export default function Hero() {
                         />
                     </Link>
                 </div>
-                <p className="text-lg pb-20 w-128">
+                <p className="text-lg pb-20 mx-16">
                     Experience in Python, Git, SQL, and web development. 
                     Knowledge in backend systems, databases, and full-stack applications using React, Angular, and FastAPI.
                 </p>
