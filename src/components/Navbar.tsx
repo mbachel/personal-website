@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import ThemeSwitch from './ThemeSwitch';
 
 export default function Navbar() {
     //to show which page is current
@@ -13,12 +14,14 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="flex items-center justify-end h-12 text-lg bg-[#A02C3D]">
+        <nav className="flex items-center justify-end h-12 text-xl">
+            <ThemeSwitch />
             {links.map(({ href, label }) => (
                 <Link
                     key={href}
                     href={href}
-                    className={pathname === href ? "font-bold px-10 h-full flex items-center bg-[#802331]" : "px-6 m-4"}
+                    className={pathname === href ? "font-bold px-10 h-full flex items-center" : "px-6 m-4"}
+                    id={pathname === href ? "active" : undefined}
                 >
                     {label}
                 </Link>

@@ -3,6 +3,7 @@ import { Nunito, Inter } from "next/font/google";
 import "../app/globals.css";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Providers from '@/components/Providers';
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -25,13 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`flex flex-col h-screen justify-between antialiased ${nunito.variable} ${inter.variable}`}>
-        <Navbar />
-        <main className="mb-auto">
-          {children}
-        </main>
-        <Footer />
+        <Providers>
+          <Navbar />
+          <main className="mb-auto">
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

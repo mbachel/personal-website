@@ -10,11 +10,12 @@ export default function Hero() {
             <div>
                 <div className="pb-4">
                     <Image 
-                        src="/me.jpg" 
+                        src="/me.png"
                         alt="Profile Picture" 
                         width={148} 
                         height={148} 
                         className="w-60 h-60 rounded-full object-cover object-center items-center mx-auto"
+                        id="profile-picture"
                         priority
                     />
                 </div>
