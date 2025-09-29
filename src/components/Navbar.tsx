@@ -1,12 +1,26 @@
 "use client";
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import ThemeSwitch from './ThemeSwitch';
 import Image  from 'next/image';
+import { Albert_Sans } from 'next/font/google';
+
+const albert = Albert_Sans({
+  variable: "--font-albert",
+  subsets: ["latin"],
+});
 
 export default function Navbar() {
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+
     //to show which page is current
     const pathname = usePathname();
+    if (!mounted) return null;
 
     const links = [
         {href: "/", label: "Home"},
@@ -17,12 +31,22 @@ export default function Navbar() {
     return (
         <div id="navbar" className="flex items-center justify-between">
             <div className="flex items-center h-12 text-xl">
-                {/* <Image 
-                    src="/signature.png"
-                    alt="Signature"
-                    width={200}
-                    height={100}
-                /> */}
+                {resolvedTheme === "dark" ? (
+                <Image 
+                    src="/logo-dark.png"
+                    alt="Logo"
+                    width={79}
+                    height={79}
+                />
+                ) : (
+                <Image 
+                    src="/logo-light.png"
+                    alt="Logo"
+                    width={79}
+                    height={79}
+                />
+                )}
+                <span className={`ml-3 text-2xl ${albert.variable}`}><span className="font-bold">Matthew</span>Bachelder</span>
             </div>
             <nav className="flex items-center h-12 text-xl">
                 <ThemeSwitch />

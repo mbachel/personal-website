@@ -6,8 +6,8 @@ export default function HomePage() {
         <RootLayout>
             <Hero />
             <section className="font-nunito text-center min-h-screen">
-                <h1 classname="">
-                    
+                <h1>
+                    hello world
                 </h1>
             </section>
         </RootLayout>
