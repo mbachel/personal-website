@@ -1,5 +1,8 @@
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { MdMail } from "react-icons/md";
+import {
+    FaLinkedin,
+    FaGithub,
+    FaEnvelope
+} from "react-icons/fa";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -34,7 +37,7 @@ export default function Hero() {
                     <Link 
                         href="/contact" 
                         title="Contact Me">
-                        <MdMail
+                        <FaEnvelope
                             size={32}
                             className="inline-block mx-2"
                         />
