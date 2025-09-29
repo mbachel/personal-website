@@ -13,7 +13,7 @@ const config: Config = {
             //     lightBg: "#E5E5E5",
             //     darkText: "#E5E5E5",
             //     lightText: "#2E3532",
-            //     primaryAccent: "[#A02C3D]",
+            //     primaryAccent: "[#A02C3D",
             //     secondaryAccent: "#802331",
             // },
             fontFamily: {

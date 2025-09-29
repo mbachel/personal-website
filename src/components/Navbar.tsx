@@ -48,19 +48,27 @@ export default function Navbar() {
                 )}
                 <span className={`ml-3 text-2xl ${albert.variable}`}><span className="font-bold">Matthew</span>Bachelder</span>
             </div>
-            <nav className="flex items-center h-12 text-xl">
+            <div className="flex items-center">
                 <ThemeSwitch />
-                {links.map(({ href, label }) => (
-                    <Link
-                        key={href}
-                        href={href}
-                        className={pathname === href ? "font-bold px-10 h-full flex items-center" : "px-6 m-4"}
-                        id={pathname === href ? "active" : undefined}
-                    >
-                        {label}
-                    </Link>
-                ))}
-            </nav>
+                <nav className="flex items-center h-10 text-xl border-2 rounded-full overflow-hidden mr-10">
+                    {links.map(({ href, label }, idx) => (
+                        <Link
+                            key={href}
+                            href={href}
+                            className={[
+                                "px-8 flex items-center h-full",
+                                idx !== 0 && "border-l",
+                                idx === 0 && "rounded-l-full",
+                                idx === links.length -1 && "rounded-r-full",
+                                pathname === href ? "font-bold flex items-center" : ""
+                            ].filter(Boolean).join(" ")}
+                            id={pathname === href ? "active" : undefined}
+                        >
+                            {label}
+                        </Link>
+                    ))}
+                </nav>
+            </div>
         </div>
     );
 }

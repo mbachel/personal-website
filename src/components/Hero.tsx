@@ -20,7 +20,7 @@ export default function Hero() {
                     />
                 </div>
                 <h1 className="text-5xl mt-4 pb-2">
-                    Hi! I&apos;m Matthew Bachelder
+                    Matthew Bachelder
                 </h1>
                 <h3 className="text-lg pb-2">
                     Charlotte, NC

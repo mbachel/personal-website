@@ -26,11 +26,15 @@ export default function RootLayout({
       <MyHead />
         <body className={`flex flex-col h-screen justify-between antialiased ${nunito.variable} ${inter.variable}`}>
           <Providers>
-            <Navbar />
-            <main className="mb-auto">
-              {children}
-            </main>
-            <Footer />
+            {/* <div className="relative min-h-screen flex flex-col"> */}
+                <Navbar />
+                {/* <div className="w-full h-12 bg-gradient-to-b from-[var(--primary-accent)] to-[var(--background)]" /> */}
+                <main className="mb-auto">
+                  {children}
+                </main>
+                {/* <div className="w-full h-12 bg-gradient-to-t from-[var(--primary-accent)] to-[var(--background)]" /> */}
+                <Footer />
+            {/* </div> */}
           </Providers>
         </body>
     </html>
