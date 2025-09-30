@@ -24,33 +24,35 @@ export default function Navbar() {
 
     const links = [
         {href: "/", label: "Home"},
+        {href: "/education", label: "Education"},
         {href: "/projects", label: "Projects"},
+        {href: "/about", label: "About"},
         {href: "/contact", label: "Contact"},
     ];
 
     return (
         <div id="navbar" className="flex items-center justify-between">
-            <div className="flex items-center h-12 text-xl">
+            <div className="flex items-center h-18 text-xl">
                 {resolvedTheme === "dark" ? (
                 <Image 
                     src="/logo-dark.png"
                     alt="Logo"
-                    width={79}
-                    height={79}
+                    width={118}
+                    height={118}
                 />
                 ) : (
                 <Image 
                     src="/logo-light.png"
                     alt="Logo"
-                    width={79}
-                    height={79}
+                    width={118}
+                    height={118}
                 />
                 )}
                 <span className={`ml-3 text-2xl ${albert.variable}`}><span className="font-bold">Matthew</span>Bachelder</span>
             </div>
             <div className="flex items-center">
                 <ThemeSwitch />
-                <nav className="flex items-center h-10 text-xl border-2 rounded-full overflow-hidden mr-10">
+                <nav className="flex items-center h-10 text-xl border-2 rounded-full overflow-hidden mr-5">
                     {links.map(({ href, label }, idx) => (
                         <Link
                             key={href}

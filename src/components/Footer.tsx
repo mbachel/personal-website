@@ -1,4 +1,8 @@
+"use client";
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 import Link from "next/link";
+import Image from "next/image";
 import {
     FaInstagram,
     FaNode,
@@ -12,9 +16,16 @@ import { SiTypescript } from "react-icons/si";
 
 
 export default function Footer() {
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
+
     return (
-        <footer className="flex flex-row font-inter items-center text-center justify-between h-fit p-5 px-50">
-            <section className="self-start">
+        <footer className="flex flex-row font-inter items-center text-center justify-between h-30 px-50">
+            <section>
                 <h2 className="text-xl">This website was hand-built using:</h2>
                 <Link 
                     href="https://nextjs.org/" 
@@ -67,7 +78,24 @@ export default function Footer() {
                     />
                 </Link>
             </section>
-            <section className="flex items-center ">
+            <section>
+                {resolvedTheme === "dark" ? (
+                    <Image 
+                        src="/logo-dark.png"
+                        alt="Logo"
+                        width={120}
+                        height={120}
+                    />
+                    ) : (
+                    <Image 
+                        src="/logo-light.png"
+                        alt="Logo"
+                        width={120}
+                        height={120}
+                    />
+                )}
+            </section>
+            <section>
                 <p className="flex items-center justify-center">
                     <Link 
                         href="https://www.instagram.com/matty.c.b02/" 
