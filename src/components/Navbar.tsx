@@ -48,7 +48,7 @@ export default function Navbar() {
                     height={118}
                 />
                 )}
-                <span className={`ml-3 text-2xl ${albert.variable}`}><span className="font-bold">Matthew</span>Bachelder</span>
+                <span className={`ml-3 text-3xl ${albert.variable}`}><span className="font-bold">Matthew</span>Bachelder</span>
             </div>
             <div className="flex items-center">
                 <ThemeSwitch />
