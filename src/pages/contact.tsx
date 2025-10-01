@@ -1,5 +1,5 @@
-import MiniHero from "../components/MiniHero";
-import RootLayout from "@/components/layout";
+import MiniHero from "@/components/MiniHero";
+import RootLayout from "@/components/Layout";
 
 export default function contact() {
     return (
