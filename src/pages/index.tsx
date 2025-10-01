@@ -2,14 +2,12 @@ import Hero from "@/components/Hero";
 import RootLayout from "@/components/Layout";
 import Link from "next/link";
 import { 
-    FaLinkedin, 
-    FaGithub,
-    FaEnvelope,
     FaBatteryQuarter,
     FaBatteryHalf,
     FaBatteryThreeQuarters,
     FaBatteryFull,
     FaGraduationCap,
+    FaFileDownload,
 } from "react-icons/fa";
 import {
     RiGitRepositoryFill,
@@ -21,54 +19,80 @@ export default function HomePage() {
     return (
         <RootLayout>
             <Hero />
-            <section className="font-nunito text-center min-h-screen m-auto w-180">
-                <div className="flex flex-col items-start justify-start pt-20 pb-10">
-                    <h2 className="text-3xl flex items-center gap-4">Why Matthew? <FaBatteryQuarter /></h2>
-                    <p className="text-xl self-start text-start max-w-160">
-                        I bring a unique blend of strong technical knowledge in
-                        computer science and practical, real-world experience in leadership.
-                        I intend to use my expertise to help organizations solve complex problems
-                        and deliver high-quality computing solutions. See my education below!
+            <a  href="/resume.pdf"
+                download
+                className="flex items-center justify-center">
+                    <p className="flex items-center justify-center text-2xl w-70 h-20 rounded-lg" 
+                    id="download-resume">
+                        Download Resume <FaFileDownload className="ml-3"/>
                     </p>
+            </a>
+            <section className="font-nunito min-h-screen m-auto w-240">
+                <div className="flex w-240">
                     <Link 
-                        className="text-xl flex text-start items-center justify-start mt-2" 
+                        className="flex items-center justify-start mt-10" 
                         href="/education">
-                            <FaGraduationCap size={40} className="mr-3"/> <p className="underline">Education</p>
+                            <FaGraduationCap size={240}/>
                     </Link>
-                </div>
-                <div className="flex flex-col items-end justify-end pt-10 pb-10">
-                    <h2 className="text-3xl flex items-center gap-4"><FaBatteryHalf /> What Can Matthew Do?</h2>
-                    <p className="text-xl self-end text-end max-w-160">
-        
-                    </p>
-                    <Link 
-                        className="text-xl flex text-start items-center justify-start mt-2" 
-                        href="/education">
-                            <p className="underline">Projects</p><RiGitRepositoryFill size={40} className="ml-3"/>
-                    </Link>
-                </div>
-                <div className="flex flex-col items-start justify-start pt-10 pb-10">
-                    <h2 className="text-3xl flex items-center gap-4">Who Is Matthew? <FaBatteryThreeQuarters /></h2>
-                    <p className="text-xl self-start text-start max-w-160">
-
-                    </p>
-                    <Link 
-                        className="text-xl flex text-start items-center justify-start mt-2" 
-                        href="/education">
-                            <RiInfoCardFill size={40} className="mr-3"/> <p className="underline">About</p>
-                    </Link>
-                </div>
-                <div className="flex flex-col items-end justify-end pt-10 pb-60">
-                    <h2 className="text-3xl flex items-center gap-4"><FaBatteryFull /> How About Matthew?</h2>
-                    <p className="text-xl self-end text-end max-w-160">
-                        I&apos;m currently looking for new opportunities to 
-                        forward my career, starting in May 2026!
-                        Whether you are looking for new interns, full-time employees, 
-                        or just want to chat, feel free to connect with me:
-                    </p>
-                    <div>
-
+                    <div className="flex flex-col items-end justify-end flex-1 pt-20 pb-10 ml-5">
+                        <h2 className="text-3xl flex items-center gap-4 pb-2"><FaBatteryQuarter /> Why Matthew?</h2>
+                        <p className="text-xl self-end text-end max-w-160">
+                            I bring a unique blend of strong technical knowledge in
+                            computer science and practical, real-world experience in leadership.
+                            I intend to use my expertise to help organizations solve complex problems
+                            and deliver high-quality computing solutions.
+                        </p>
                     </div>
+                </div>
+                <div className="flex w-240 pt-20">
+                    <div className="flex flex-col items-start justify-start pt-10 pb-10">
+                        <h2 className="text-3xl flex items-center gap-4 pb-2">What Can Matthew Do? <FaBatteryHalf /></h2>
+                        <p className="text-xl pb-2">Here&apos;s a snapshot of my core competencies:</p>
+                        <ul className="text-xl self-start text-start max-w-180 list-disc">
+                            <li><span className="font-bold">DevOps</span> - Automation, CI/CD pipelines, deployment practices</li>
+                            <li><span className="font-bold">System Architecture</span> - Modular design, database design, scalability.</li>
+                            <li><span className="font-bold">Project Management</span> - Agile workflows, team leadership, version control.</li>
+                            <li><span className="font-bold">Software Development</span> - Web apps, API design, test-driven development.</li>
+                        </ul>
+                    </div>
+                    <Link 
+                        className="flex items-center justify-end flex-1" 
+                        href="/education">
+                            <RiGitRepositoryFill size={240}/>
+                    </Link>
+                </div>
+                <div className="flex w-240 pt-20">
+                    <Link 
+                        className="flex items-center justify-start mt-10" 
+                        href="/education">
+                            <RiInfoCardFill size={240}/>
+                    </Link>
+                    <div className="flex flex-col items-end justify-end flex-1 pt-10 pb-10">
+                        <h2 className="text-3xl flex items-center gap-4 pb-2"><FaBatteryThreeQuarters /> Who Is Matthew?</h2>
+                        <p className="text-xl self-end text-end max-w-160">
+                            I&apos;m in my Senior year at the University of North Carolina at Charlotte,
+                            studying a computer science degree with a concentration in Information Technology.
+                            I was also accepted into the Early Entry program at UNCC for a Master&apos;s 
+                            in Information Technology. In my free time, I enjoy fishing, traveling, and 
+                            gaming with my friends. See more about me below!
+                        </p>
+                    </div>
+                </div>
+                <div className="flex w-240 pt-20 pb-60">
+                    <div className="flex flex-col items-start justify-start pt-10">
+                        <h2 className="text-3xl flex items-center gap-4 pb-2">How About Matthew? <FaBatteryFull /></h2>
+                        <p className="text-xl self-start text-start max-w-160">
+                            I&apos;m currently looking for new opportunities to 
+                            forward my career, starting in May 2026!
+                            Whether you are looking for new interns, full-time employees, 
+                            or just want to chat, feel free to connect with me!
+                        </p>
+                    </div>
+                    <Link 
+                        className="flex items-center justify-end flex-1" 
+                        href="/contact">
+                            <MdContactPage size={240}/>
+                    </Link>
                 </div>
             </section>
         </RootLayout>
