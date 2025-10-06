@@ -1,5 +1,5 @@
+import Head from "next/head";
 import Hero from "@/components/Hero";
-import RootLayout from "@/components/Layout";
 import Link from "next/link";
 import { 
     FaBatteryQuarter,
@@ -17,7 +17,11 @@ import { MdContactPage } from "react-icons/md";
 
 export default function HomePage() {
     return (
-        <RootLayout>
+        <>
+            <Head>
+                <title>Home Page</title>
+                <meta name="description" content="Welcome to my personal website." />
+            </Head>
             <Hero />
             <a  href="/resume.pdf"
                 download
@@ -27,7 +31,7 @@ export default function HomePage() {
                         Download Resume <FaFileDownload className="ml-3"/>
                     </p>
             </a>
-            <section className="font-nunito min-h-screen m-auto w-240">
+            <section className="font-nunito min-h-screen flex flex-col items-center justify-center px-20">
                 <div className="flex w-240">
                     <Link 
                         className="flex items-center justify-start mt-10" 
@@ -95,6 +99,6 @@ export default function HomePage() {
                     </Link>
                 </div>
             </section>
-        </RootLayout>
+        </>
     );
 }
