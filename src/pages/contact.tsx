@@ -1,16 +1,18 @@
+import Head from "next/head";
 import MiniHero from "@/components/MiniHero";
-import RootLayout from "@/components/Layout";
+import ContactForm from "@/components/ContactForm";
 
 export default function contact() {
     return (
-        <RootLayout>
+        <>
+            <Head>
+                <title>Contact Me</title>
+                <meta name="description" content="Get in touch with me." />
+            </Head>
             <MiniHero />
-            <section className="flex flex-col items-center text-center min-h-screen">
-                <div className="flex items-center font-nunito pt-10">
-                    Contact Page works!
-                </div>
-                <iframe className="flex items-center m-auto pb-5" src="/resume.pdf" width="825" height="1145"/>
+            <section>
+                <ContactForm />
             </section>
-        </RootLayout>
+        </>
     );
 }   
