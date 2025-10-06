@@ -1,9 +1,12 @@
-import Head from "next/head";
+import { Html, Head, Main, NextScript } from "next/document";
+import React from 'react';
+import "../app/globals.css";
 
-export default function MyHead() {
-    return (
+export default function Document(){
+  return (
+    <Html lang="en" suppressHydrationWarning>
         <Head>
-            <title>Matthew Bachelder | Portfolio</title>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="description" content="Matthew Bachelder's personal portfolio website." />
             <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>
@@ -23,5 +26,10 @@ export default function MyHead() {
             <meta name="msapplication-TileColor" content="#ffffff"/>
             <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
         </Head>
-    )
-}  
+        <body className="flex flex-col h-screen antialiased">
+          <Main />
+          <NextScript />
+        </body>
+    </Html>
+  );
+}
