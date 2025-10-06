@@ -3,7 +3,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #D6D6D6;
+  --primary-background: #D6D6D6;
+  --secondary-background: #E5E5E5;
+  --tertiary-background: #DCDCDC;
   --text-color: black;
   --primary-accent: #758ecd;
   --secondary-accent: #5A78C4;
@@ -11,38 +13,32 @@
 }
 
 .dark {
-  --background: #2E3532;
+  --primary-background: #2E3532;
+  --secondary-background: #3C4440;
+  --tertiary-background: #464C49;
   --text-color: #E5E5E5;
   --primary-accent: #A02C3D;
   --secondary-accent: #802331;
   --tertiary-accent: #902737;
 }
 
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-nunito: var(--font-nunito);
-  --font-inter: var(--font-inter);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #2E3532;
-    --foreground: #E5E5E5;
-  }
-} */
-
 body {
-  background: var(--background);
+  height: 100vh;
+  background: linear-gradient(to right, var(--secondary-background) 0%, var(--primary-background) 50%, var(--secondary-background) 100%);
   color: var(--text-color);
-  font-family: var(--font-nunito), var(--font-inter);
+  font-family: 'Nunito', 'Inter', sans-serif;
 }
 
 #navbar{
   background-color: var(--primary-accent);
-  #active {
-    background-color: var(--secondary-accent);
-  }
+}
+
+#active {
+  background-color: var(--tertiary-accent); 
+}
+
+#active:hover {
+  background-color: var(--secondary-accent);
 }
 
 footer {
@@ -59,5 +55,9 @@ footer {
   color: var(--text-color);
 }
 #download-resume:hover {
-    background: var(--tertiary-accent);
+    background: var(--secondary-accent);
+}
+
+input, textarea {
+  background-color: var(--tertiary-background);
 }
