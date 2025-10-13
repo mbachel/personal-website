@@ -1,5 +1,5 @@
 import Head from "next/head";
-import MiniHero from "@/components/MiniHero";
+import Skills from "@/components/Skills";
 import Link from "next/link";
 import {
     Bs1CircleFill,
@@ -16,7 +16,6 @@ export default function experience() {
                 <title>My Experience</title>
                 <meta name="description" content="Learn about my experiences." />
             </Head>
-            <MiniHero />
             <div className="font-nunito min-h-screen" id="timeline">
                 <h1 className="flex items-center justify-center text-5xl pt-20 pb-10" id="education">Education</h1>
                 <div className="flex flex-col items-center w-full">
@@ -140,8 +139,15 @@ export default function experience() {
                     </div>
                 </div>
 
-                <h1 className="flex items-center justify-center mr-24 ml-24 text-5xl pt-20 pb-10 border-r-4 [border-image:linear-gradient(to_right,#758ecd,#A02C3D)_1]" id="experience">Experience</h1>
-                <div className="flex flex-col items-center w-full">
+                {/* Skills Section */}
+                <h1 className="flex items-center justify-center mx-24 text-5xl pt-20 pb-10 border-r-4 [border-image:linear-gradient(to_right,#758ecd,#A02C3D)_1]" id="skills">Skills</h1>
+                <div className="border-4 mx-16 [border-image:linear-gradient(to_right,#758ecd,#A02C3D)_1]">
+                    <Skills />
+                </div>
+
+                {/* Experience Section */}
+                    <h1 className="flex items-center justify-center mx-24 text-5xl pt-20 pb-10 border-r-4 [border-image:linear-gradient(to_right,#758ecd,#A02C3D)_1]" id="experience">Experience</h1>
+                    <div className="flex flex-col items-center w-full">
                     <div className="relative flex w-240 min-h-[150px]">
                         <div className="flex-1 pl-36 pr-16 pb-8 border-r-4 border-b-4 [border-image:linear-gradient(to_right,#758ecd,#A02C3D)_1]">
                             <h2 className="text-2xl">July 2021 - July 2022</h2>
