@@ -24,7 +24,7 @@ export default function Footer() {
     if (!mounted) return null;
 
     return (
-        <footer className="flex flex-row font-inter items-center text-center justify-between h-30 px-50">
+        <footer className="flex flex-row font-inter items-center text-center justify-between h-30 px-50 shadow-lg">
             <section>
                 <h2 className="text-xl">This website was hand-built using:</h2>
                 <Link 

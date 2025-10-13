@@ -24,14 +24,14 @@ export default function Navbar() {
 
     const links = [
         {href: "/", label: "Home"},
-        {href: "/education", label: "Education"},
+        {href: "/experience", label: "Experience"},
         {href: "/projects", label: "Projects"},
         {href: "/about", label: "About"},
         {href: "/contact", label: "Contact"},
     ];
 
     return (
-        <div id="navbar" className="flex items-center justify-between">
+        <div id="navbar" className="flex items-center justify-between shadow-lg">
             <div className="flex items-center h-18 text-xl">
                 {resolvedTheme === "dark" ? (
                 <Image 
@@ -58,7 +58,7 @@ export default function Navbar() {
                             key={href}
                             href={href}
                             className={[
-                                "px-8 flex items-center h-full",
+                                "px-8 flex items-center h-full hover:bg-[var(--secondary-accent)]",
                                 idx !== 0 && "border-l",
                                 idx === 0 && "rounded-l-full",
                                 idx === links.length -1 && "rounded-r-full",
