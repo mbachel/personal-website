@@ -11,8 +11,8 @@ export default function Hero() {
     return (
         <header className="relative">
             <BackgroundRippleEffect rows={13} cols={40} />
-            <div className="relative flex font-inter justify-center items-center h-fit text-center pt-16 w-160 mx-auto">
-                <div className="z-10">
+            <div className="relative flex font-inter justify-center items-center h-fit text-center pt-16 w-160 mx-auto pointer-events-none">
+                <div className="z-10 ">
                     <div className="pb-4">
                         <Image 
                             src="/me.png"
@@ -35,7 +35,7 @@ export default function Hero() {
                         <br />
                         BA Computer Science, IT Concentration
                     </h2>
-                    <div className="pb-6 justify-center">
+                    <div className="pb-6 pointer-events-auto inline-block">
                         <Link 
                             href="/contact" 
                             title="Contact Me">

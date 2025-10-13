@@ -10,7 +10,7 @@ export default function MiniHero() {
         <header className="relative">
             <BackgroundRippleEffect rows={7} cols={40} />
             <div className="relative flex flex-col font-inter items-center justify-center h-fit text-center pt-16">
-                <div className="z-10">
+                <div className="z-10 pointer-events-none">
                     <div className="pb-4 mb-2">
                         <Image 
                             src="/me.png"
@@ -22,7 +22,7 @@ export default function MiniHero() {
                             priority
                         />
                     </div>
-                    <div className="pb-8 mt-auto">
+                    <div className="pb-8 mt-auto pointer-events-auto inline-block">
                         <Link 
                             href="/contact" 
                             title="Contact Me">
