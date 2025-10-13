@@ -8,18 +8,10 @@ const config: Config = {
     ],
     theme: {
         extend: {
-            // colors: {
-            //     darkBg: "#2E3532",
-            //     lightBg: "#E5E5E5",
-            //     darkText: "#E5E5E5",
-            //     lightText: "#2E3532",
-            //     primaryAccent: "[#A02C3D",
-            //     secondaryAccent: "#802331",
-            // },
             fontFamily: {
                 nunito: ['var(--font-nunito)'],
                 inter: ['var(--font-inter)'],
-            }
+            },
         },
     },
     darkMode: 'class',

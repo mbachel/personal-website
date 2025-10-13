@@ -7,7 +7,6 @@ export default function Document(){
     <Html lang="en" suppressHydrationWarning>
         <Head>
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="description" content="Matthew Bachelder's personal portfolio website." />
             <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>
             <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png"/>
