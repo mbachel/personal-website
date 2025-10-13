@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Hero from "@/components/Hero";
 import Link from "next/link";
 import { 
     FaBatteryQuarter,
@@ -20,13 +19,12 @@ export default function HomePage() {
         <>
             <Head>
                 <title>Home Page</title>
-                <meta name="description" content="Welcome to my personal website." />
+                <meta name="description" content="Welcome to my personal website!" />
             </Head>
-            <Hero />
-            <a  href="/resume.pdf"
+            <a  href="/Matthew Bachelder.pdf"
                 download
                 className="flex items-center justify-center">
-                    <p className="flex items-center justify-center text-2xl w-70 h-20 rounded-lg" 
+                    <p className="flex items-center justify-center text-2xl mt-12 w-70 h-20 rounded-lg" 
                     id="download-resume">
                         Download Resume <FaFileDownload className="ml-3"/>
                     </p>
@@ -35,7 +33,7 @@ export default function HomePage() {
                 <div className="flex w-240">
                     <Link 
                         className="flex items-center justify-start mt-10" 
-                        href="/education">
+                        href="/experience">
                             <FaGraduationCap size={240}/>
                     </Link>
                     <div className="flex flex-col items-end justify-end flex-1 pt-20 pb-10 ml-5">
@@ -53,23 +51,23 @@ export default function HomePage() {
                         <h2 className="text-3xl flex items-center gap-4 pb-2">What Can Matthew Do? <FaBatteryHalf /></h2>
                         <p className="text-xl pb-2">Here&apos;s a snapshot of my core competencies:</p>
                         <ul className="text-xl self-start text-start max-w-180 list-disc">
-                            <li><span className="font-bold">DevOps</span> - Automation, CI/CD pipelines, deployment practices</li>
-                            <li><span className="font-bold">System Architecture</span> - Modular design, database design, scalability.</li>
-                            <li><span className="font-bold">Project Management</span> - Agile workflows, team leadership, version control.</li>
-                            <li><span className="font-bold">Software Development</span> - Web apps, API design, test-driven development.</li>
+                            <li><span className="font-bold">Web Development</span> - React/Angular, full-stack, interactive features.</li>
+                            <li><span className="font-bold">Software Engineering</span> - CI/CD pipelines, version control, unit testing.</li>
+                            <li><span className="font-bold">System Architecture</span> - Modular design, database integration, scalability.</li>
+                            <li><span className="font-bold">Project Management</span> - Agile/Scrum, client collaboration, documentation.</li>
                         </ul>
                     </div>
                     <Link 
                         className="flex items-center justify-end flex-1" 
-                        href="/education">
+                        href="/projects">
                             <RiGitRepositoryFill size={240}/>
                     </Link>
                 </div>
                 <div className="flex w-240 pt-20">
                     <Link 
                         className="flex items-center justify-start mt-10" 
-                        href="/education">
-                            <RiInfoCardFill size={240}/>
+                        href="/about">
+                            <RiInfoCardFill className="animate-fade-right" size={240}/>
                     </Link>
                     <div className="flex flex-col items-end justify-end flex-1 pt-10 pb-10">
                         <h2 className="text-3xl flex items-center gap-4 pb-2"><FaBatteryThreeQuarters /> Who Is Matthew?</h2>
@@ -82,7 +80,7 @@ export default function HomePage() {
                         </p>
                     </div>
                 </div>
-                <div className="flex w-240 pt-20 pb-60">
+                <div className="flex w-240 pt-20 pb-30">
                     <div className="flex flex-col items-start justify-start pt-10">
                         <h2 className="text-3xl flex items-center gap-4 pb-2">How About Matthew? <FaBatteryFull /></h2>
                         <p className="text-xl self-start text-start max-w-160">
