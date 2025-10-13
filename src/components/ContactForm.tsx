@@ -1,117 +1,94 @@
 import { useForm, ValidationError } from '@formspree/react';
+import { FaCheckCircle } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function ContactForm() {
-    const [state, handleSubmit] = useForm("xqaylpql");
+    const [state, handleSubmit] = useForm("mblzpjob");
     if (state.succeeded) {
         return (
-            <div>
-                <h2>Thanks for reaching out!</h2>
-                <p>I will get back to you as soon as I can.</p>
+            <div className="text-center p-8">
+                <FaCheckCircle className="text-green-500 mx-auto mb-4" size={48} />
+                <h2 className="text-2xl font-bold mb-2">Thanks for reaching out!</h2>
+                <p className="text-lg">
+                    I will get back to you as soon as I can.<br />
+                    In the meantime, don&apos;t forget to check out my other pages,<br />
+                    and feel free to connect with me on <Link 
+                            href="https://www.linkedin.com/in/matthewbachelder/" 
+                            title="LinkedIn" 
+                            rel="noopener noreferrer" 
+                            target="_blank"
+                            className="underline">
+                            LinkedIn
+                        </Link>!
+                </p>
             </div>
         )
     }
     return (
-        <div className="flex items-center justify-center w-full">
-            <form onSubmit={handleSubmit} className="flex flex-col items-center justify-evenly gap-4 rounded-lg w-[40rem] p-4 m-4" autoComplete="on">
-                <section className="flex flex-row w-[33rem] justify-between">
-                    <div className="flex flex-col p-2 m-2 rounded-lg">
-                        <label htmlFor="name" className="text-xl">
-                            Name
-                        </label>
-                        <input
-                            required
-                            id="name"
-                            type="text"
-                            name="name"
-                            autoComplete="name"
-                            placeholder="John Doe"
-                            className="w-full rounded-md px-3.5 py-2 outline-1 -outline-offset-1 outline-gray-600 dark:outline-gray-800 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-                        />
-                        <ValidationError
-                            prefix="Name"
-                            field="name"
-                            errors={state.errors}
-                        />
-                    </div>
-                    <div className="flex flex-col p-2 m-2 rounded-lg">
-                        <label htmlFor="company" className="text-xl">
-                            Company
-                        </label>
-                        <input
-                            id="company"
-                            type="text"
-                            name="company"
-                            placeholder="Business Corp."
-                            className="w-full rounded-md px-3.5 py-2 outline-1 -outline-offset-1 outline-gray-600 dark:outline-gray-800 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-                        />
-                        <ValidationError
-                            prefix="Company"
-                            field="company"
-                            errors={state.errors}
-                        />
-                    </div>
-                </section>
-                <section className="flex flex-row w-[33rem] justify-between">
-                    <div className="flex flex-col p-2 m-2">
-                        <label htmlFor="phone" className="text-xl">
-                            Phone Number
-                        </label>
-                        <input
-                            id="phone"
-                            type="tel"
-                            name="phone"
-                            autoComplete="tel"
-                            placeholder="+1 123-456-7890"
-                            className="w-full rounded-md px-3.5 py-2 outline-1 -outline-offset-1 outline-gray-600 dark:outline-gray-800 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-                        />
-                        <ValidationError
-                            prefix="Phone"
-                            field="phone"
-                            errors={state.errors}
-                        />
-                    </div>
-                    <div className="flex flex-col p-2 m-2 rounded-lg">
-                        <label htmlFor="email" className="text-xl">
-                            Email
-                        </label>
-                        <input
-                            required
-                            id="email"
-                            type="email"
-                            name="email"
-                            autoComplete="email"
-                            placeholder="example@email.com"
-                            className="w-full rounded-md px-3.5 py-2 outline-1 -outline-offset-1 outline-gray-600 dark:outline-gray-800 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-                        />
-                        <ValidationError
-                            prefix="Email"
-                            field="email"
-                            errors={state.errors}
-                        />
-                    </div>
-                </section>
-                <section className="flex flex-col p-2 rounded-lg w-[32rem] h-48">
+        <div className="flex flex-col items-center justify-center w-full">
+            <form onSubmit={handleSubmit} className="flex flex-col items-center justify-evenly gap-4 rounded-lg w-[40rem] p-4 m-4">
+                <div className="flex flex-col w-[32rem] justify-between p-2">
+                    <label htmlFor="name" className="text-xl">
+                        Name<span className="text-lg text-red-700">*</span>
+                    </label>
+                    <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        placeholder="John Doe"
+                        required
+                        className="w-full rounded-md px-3.5 py-2 outline-1 -outline-offset-1 outline-gray-600 dark:outline-gray-800 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 caret-indigo-500"
+                    />
+                    <ValidationError
+                        prefix="Name"
+                        field="name"
+                        errors={state.errors}
+                        className="text-red-600 mt-1 text-base"
+                    />
+                </div>
+                <div className="flex flex-col w-[32rem] justify-between p-2">
+                    <label htmlFor="email" className="text-xl">
+                        Email<span className="text-lg text-red-700">*</span>
+                    </label>
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="example@email.com"
+                        className="w-full rounded-md px-3.5 py-2 outline-1 -outline-offset-1 outline-gray-600 dark:outline-gray-800 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 caret-indigo-500"
+                    />
+                    <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                        className="text-red-600 mt-1 text-base"
+                    />
+                </div>
+                <div className="flex flex-col p-2 w-[32rem] h-48">
                     <label htmlFor="message" className="text-xl">
-                        Message
+                        Message<span className="text-lg text-red-700">*</span>
                     </label>
                     <textarea
                         required
                         id="message"
                         name="message"
-                        className="w-full h-full rounded-md px-3.5 py-2 outline-1 -outline-offset-1 outline-gray-600 dark:outline-gray-800 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+                        placeholder="Your message here..."
+                        className="w-full h-full rounded-md px-3.5 py-2 outline-1 -outline-offset-1 outline-gray-600 dark:outline-gray-800 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 caret-indigo-500"
                     />
                     <ValidationError
                         prefix="Message"
                         field="message"
                         errors={state.errors}
+                        className="text-red-600 mt-1 text-base"
                     />
-                </section>
+                </div>
                 <button 
                     type="submit"
-                    className="w-[31.25rem] bg-[var(--tertiary-accent)] text-xl py-2 rounded-md hover:bg-[var(--secondary-accent)] hover:cursor-pointer"
+                    className="w-[32rem] bg-[var(--tertiary-accent)] text-xl py-2 rounded-md hover:bg-[var(--secondary-accent)] hover:cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
                     disabled={state.submitting}
                 >
-                    Submit
+                    Send message
                 </button>
             </form>
         </div>
